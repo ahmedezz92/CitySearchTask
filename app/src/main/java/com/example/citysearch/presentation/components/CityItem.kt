@@ -97,7 +97,7 @@ fun CityItem(
                 .fillMaxWidth()
                 .padding(top = 5.dp, end = 16.dp, bottom = 10.dp)
                 .clickable { openGoogleMaps() },
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
 
             ) {
@@ -133,15 +133,16 @@ fun CityItem(
 
                 Column {
                     Text(
-                        text = city.name + ", " + city.country,
+                        text = "${city.name}, ${city.country}",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Medium
                     )
 
                     Text(
                         text = "${city.coord.lat}, ${city.coord.lon}",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier= Modifier.padding(top = 10.dp)
                     )
                 }
             }
