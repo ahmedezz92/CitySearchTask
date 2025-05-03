@@ -7,18 +7,17 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CityEntity(
-    @SerialName("country") val country: String,
-    @SerialName("name") val name: String,
+    val country: String,
+    val name: String,
     @SerialName("_id") val id: Int,
-    @SerialName("lat") val lat: Double,
-    @SerialName("lon") val lon: Double,
+    val coord: Coord
 ) {
     fun toCity(): City {
         return City(
             country = country,
             name = name,
             _id = id,
-            coord = Coord(lat, lon)
+            coord = coord
         )
     }
 }

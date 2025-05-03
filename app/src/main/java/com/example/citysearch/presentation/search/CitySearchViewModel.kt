@@ -85,6 +85,5 @@ class CitySearchViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 }
-// Extension property to get the first letter of a city name
 private val City.firstLetter: Char
     get() = name.firstOrNull()?.uppercaseChar() ?: '#'

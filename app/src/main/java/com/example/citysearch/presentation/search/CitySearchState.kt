@@ -9,6 +9,5 @@ data class CitySearchState(
     val isLoading: Boolean = false,
     val isSearchBarFocused: Boolean = false,
     val error: String? = null,
-    // Group cities by their first letter for the UI
     val groupedCities: Map<Char, List<City>> = emptyMap()
 )

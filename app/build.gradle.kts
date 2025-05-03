@@ -60,6 +60,7 @@ dependencies {
     kapt(libs.hilt.compiler)
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
 
     // Coroutines

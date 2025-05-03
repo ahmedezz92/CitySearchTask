@@ -39,17 +39,16 @@ fun SearchBar(
     onQueryChange: (String) -> Unit,
     onFocusChange: (Boolean) -> Unit,
     focused: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     val focusRequester = remember { FocusRequester() }
     val interactionSource = remember { MutableInteractionSource() }
-    
-    // Animate search bar properties based on focus state
+
     val height by animateDpAsState(
         targetValue = if (focused) 60.dp else 50.dp,
         label = "SearchBarHeight"
     )
-    
+
     val elevation by animateFloatAsState(
         targetValue = if (focused) 8f else 2f,
         label = "SearchBarElevation"
@@ -75,7 +74,7 @@ fun SearchBar(
                 contentDescription = "Search",
                 tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
-            
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -99,7 +98,7 @@ fun SearchBar(
                     interactionSource = interactionSource,
                     singleLine = true
                 )
-                
+
                 // Show hint when query is empty
                 if (query.isEmpty()) {
                     Text(
@@ -109,8 +108,7 @@ fun SearchBar(
                     )
                 }
             }
-            
-            // Show clear button when query is not empty
+
             if (query.isNotEmpty()) {
                 IconButton(
                     onClick = { onQueryChange("") },

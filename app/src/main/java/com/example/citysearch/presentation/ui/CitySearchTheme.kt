@@ -21,7 +21,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Define color schemes
 private val LightColorScheme = lightColorScheme(
     primary = CitySearchColors.primary,
     onPrimary = CitySearchColors.onPrimary,
@@ -177,7 +176,6 @@ val AppTypography = Typography(
 @Composable
 fun CitySearchTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
