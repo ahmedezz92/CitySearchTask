@@ -4,6 +4,7 @@ color background
 color bgFlagFrame
 color bgLightGreyFrame
 color black
+color ic_launcher_background
 color purple_200
 color purple_500
 color purple_700
